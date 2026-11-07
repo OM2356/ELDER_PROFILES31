@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Buddy Elder AI</title>
+    <meta name="description" content="Voice-first digital companion and safety platform for elderly adults, providing companionship, daily wellness check-ins, fall prevention, digital skill education, scam detection, and caregiver dashboards in English, Hindi, and Marathi." />
+    
+    <!-- OpenGraph & Social Cards -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Buddy Elder AI" />
+    <meta property="og:description" content="Voice-first digital companion and safety platform for elderly adults, providing companionship, daily wellness check-ins, fall prevention, digital skill education, scam detection, and caregiver dashboards in English, Hindi, and Marathi." />
+    <meta property="og:site_name" content="Buddy Elder AI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Buddy Elder AI" />
+    <meta name="twitter:description" content="Voice-first digital companion and safety platform for elderly adults, providing companionship, daily wellness check-ins, fall prevention, digital skill education, scam detection, and caregiver dashboards in English, Hindi, and Marathi." />
+    
+    <!-- PWA & Mobile Web App Meta -->
+    <meta name="theme-color" content="#F59E0B" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="BuddyElder" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Buddy Elder AI",
+      "alternateName": "बडी एल्डर एआई",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "All",
+      "description": "Voice-first digital companion and safety platform for elderly adults with multi-agent intelligence, fall prevention, daily routines, scam detection, and caregiver reporting.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "inLanguage": ["en", "hi", "mr"],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Elderly and Senior Citizens, Caregivers, Families"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-amber-50/40 text-slate-900 antialiased selection:bg-amber-200 min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

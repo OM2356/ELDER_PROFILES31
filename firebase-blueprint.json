@@ -1,0 +1,129 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "id": { "type": "string", "description": "User unique UID" },
+        "name": { "type": "string", "description": "Senior or caregiver full name" },
+        "role": { "type": "string", "enum": ["senior", "caregiver"] },
+        "age": { "type": "number", "description": "Senior age in years" },
+        "language": { "type": "string", "enum": ["en", "hi", "mr"] },
+        "preferredSpeechRate": { "type": "number" },
+        "highContrast": { "type": "boolean" },
+        "fontSize": { "type": "string", "enum": ["standard", "large", "extra-large"] },
+        "emergencyContacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "relation": { "type": "string" },
+              "phone": { "type": "string" },
+              "isPrimaryCaregiver": { "type": "boolean" }
+            }
+          }
+        },
+        "privacySettings": {
+          "type": "object",
+          "properties": {
+            "shareWellnessWithCaregiver": { "type": "boolean" },
+            "shareExercisesWithCaregiver": { "type": "boolean" },
+            "shareLearningProgress": { "type": "boolean" },
+            "allowEmergencyLocation": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "DailyCheckIn": {
+      "collection": "users/{userId}/checkIns",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "date": { "type": "string", "description": "YYYY-MM-DD" },
+        "timestamp": { "type": "string" },
+        "mood": { "type": "string", "enum": ["great", "good", "okay", "tired", "pain"] },
+        "sleepQuality": { "type": "string", "enum": ["deep", "adequate", "restless"] },
+        "physicalDiscomfort": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "ExerciseLog": {
+      "collection": "users/{userId}/exerciseLogs",
+      "fields": {
+        "id": { "type": "string" },
+        "exerciseId": { "type": "string" },
+        "date": { "type": "string" },
+        "completed": { "type": "boolean" },
+        "timestamp": { "type": "string" }
+      }
+    },
+    "EmergencyAlert": {
+      "collection": "users/{userId}/emergencyAlerts",
+      "fields": {
+        "id": { "type": "string" },
+        "reason": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "MemoryItem": {
+      "collection": "users/{userId}/memories",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "category": { "type": "string", "enum": ["interests", "routine", "health", "family", "general"] },
+        "key": { "type": "string" },
+        "value": { "type": "string" },
+        "confidence": { "type": "number" },
+        "timestamp": { "type": "string" }
+      }
+    },
+    "EmergencyRecord": {
+      "collection": "emergencyRecords",
+      "fields": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "reason": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "status": { "type": "string", "enum": ["triggered", "acknowledged", "resolved", "cancelled"] },
+        "emergencyNumber": { "type": "string" },
+        "channels": {
+          "type": "object",
+          "properties": {
+            "inApp": { "type": "object" },
+            "sms": { "type": "object" },
+            "email": { "type": "object" }
+          }
+        },
+        "falseAlarmReason": { "type": "string" },
+        "acknowledgedBy": { "type": "string" },
+        "acknowledgedNotes": { "type": "string" }
+      }
+    },
+    "RAGDocument": {
+      "collection": "ragDocuments",
+      "fields": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "summary": { "type": "string" },
+        "content": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "AuditLog": {
+      "collection": "auditLogs",
+      "fields": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "eventType": { "type": "string" },
+        "severity": { "type": "string", "enum": ["info", "warning", "critical"] },
+        "userId": { "type": "string" },
+        "details": { "type": "string" }
+      }
+    }
+  }
+}

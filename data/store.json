@@ -1,0 +1,88 @@
+{
+  "user": {
+    "id": "senior_1",
+    "name": "Ramesh Sharma",
+    "role": "senior",
+    "age": 72,
+    "language": "en",
+    "preferredSpeechRate": 0.85,
+    "highContrast": false,
+    "fontSize": "large",
+    "emergencyContacts": [
+      {
+        "id": "c1",
+        "name": "Priya Sharma (Daughter)",
+        "relation": "Daughter & Primary Caregiver",
+        "phone": "+91 98765 43210",
+        "isPrimaryCaregiver": true
+      },
+      {
+        "id": "c2",
+        "name": "Amit Sharma (Son)",
+        "relation": "Son",
+        "phone": "+91 98111 22233",
+        "isPrimaryCaregiver": false
+      },
+      {
+        "id": "c3",
+        "name": "Dr. V. K. Mehta (Family Doctor)",
+        "relation": "Physician",
+        "phone": "+91 98222 33344",
+        "isPrimaryCaregiver": false
+      }
+    ],
+    "privacySettings": {
+      "shareWellnessWithCaregiver": true,
+      "shareExercisesWithCaregiver": true,
+      "shareLearningProgress": true,
+      "allowEmergencyLocation": true
+    }
+  },
+  "checkIns": [
+    {
+      "id": "chk_init_1",
+      "userId": "senior_1",
+      "date": "2026-11-05",
+      "timestamp": "09:15 AM",
+      "mood": "good",
+      "sleepQuality": "adequate",
+      "physicalDiscomfort": [
+        "None (Feeling comfortable)"
+      ],
+      "notes": "Morning walk in garden"
+    },
+    {
+      "id": "chk_init_2",
+      "userId": "senior_1",
+      "date": "2026-11-04",
+      "timestamp": "08:45 AM",
+      "mood": "great",
+      "sleepQuality": "deep",
+      "physicalDiscomfort": [
+        "None (Feeling comfortable)"
+      ],
+      "notes": "Slept soundly"
+    }
+  ],
+  "exerciseLogs": [
+    {
+      "id": "ex_log_1",
+      "exerciseId": "ex_1",
+      "date": "2026-11-05",
+      "completed": true,
+      "timestamp": "10:30 AM"
+    }
+  ],
+  "completedLessons": [
+    "l_phone_1",
+    "l_wa_1"
+  ],
+  "emergencyLogs": [
+    {
+      "id": "alert_1793954010929",
+      "reason": "Test emergency trigger",
+      "timestamp": "2026-11-06T08:33:30.929Z",
+      "status": "ACTIVE_RECORDED"
+    }
+  ]
+}

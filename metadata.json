@@ -1,0 +1,10 @@
+{
+  "name": "Buddy Elder AI",
+  "description": "Voice-first digital companion and safety platform for elderly adults, providing companionship, daily wellness check-ins, fall prevention, digital skill education, scam detection, and caregiver dashboards in English, Hindi, and Marathi.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+  }
+
+  html {
+    font-size: 18px;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  /* Elderly accessibility: ensure generous minimum sizing */
+  body {
+    font-size: 1.25rem; /* 20px default readable body */
+    line-height: 1.6;
+    letter-spacing: 0.015em;
+  }
+
+  /* Clear focus rings for keyboard navigation */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 4px solid #f59e0b;
+    outline-offset: 3px;
+  }
+}
+
+/* High Contrast mode classes */
+.high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast button,
+.high-contrast .interactive-card {
+  border-width: 3px !important;
+  border-color: #facc15 !important;
+}
+
+.high-contrast .accent-highlight {
+  color: #facc15 !important;
+}
+
+/* Pulse animation for active voice recording */
+@keyframes elder-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 0 16px rgba(239, 68, 68, 0);
+  }
+}
+
+.voice-recording-pulse {
+  animation: elder-pulse 1.8s infinite ease-in-out;
+}

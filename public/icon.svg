@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#F59E0B" />
+  <circle cx="256" cy="256" r="210" fill="#D97706" fill-opacity="0.2" />
+  <!-- Heart and Hands icon in white -->
+  <path d="M256 380c-7.2 0-14.4-2.8-19.8-8.2l-98.4-98.4c-31.2-31.2-31.2-82 0-113.2 31.2-31.2 82-31.2 113.2 0l5 5 5-5c31.2-31.2 82-31.2 113.2 0 31.2 31.2 31.2 82 0 113.2L275.8 371.8c-5.4 5.4-12.6 8.2-19.8 8.2z" fill="#FFFFFF" />
+  <circle cx="256" cy="235" r="32" fill="#F59E0B" />
+</svg>
